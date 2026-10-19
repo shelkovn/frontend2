@@ -10,12 +10,6 @@ let url = ref<string>("")
   <img :src="url"/> 
   <h1>boba</h1>
 
-  <a href="/auth">
-    <button> auf </button>
-  </a>
-
-  <button @click="$router.push('/auth')"> cool auth </button>
-
   <RouterView/>
 </template>
 
