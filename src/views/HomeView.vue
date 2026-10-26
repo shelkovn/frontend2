@@ -25,13 +25,11 @@ let reset = () => {
 </script>
 
 <template>
-    <input placeholder="boba" type="text" v-model="login" />
-    <input placeholder="secret" type="password" v-model="password" />
     
     <p v-if="clicks <= 5">
         WORK HARDER
-        <span v-if="bibacide"> FOREVER SINNER the lost bibas are crying. <br /> doxxing: {{ login }} <br /> pwd: {{
-            password }}</span>
+        <span v-if="bibacide"> FOREVER SINNER the lost bibas are crying. <!--<br /> doxxing: {{ login }} <br /> pwd: {{
+            password }}--></span>
         <span v-else> lawful </span>
     </p>
     <p v-if="clicks > 5">

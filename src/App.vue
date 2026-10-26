@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import AuthView from './views/AuthView.vue';
 let url = ref<string>("")
 let pingy = ref<string>("eepy")
 let pingvalue = ref<Number>(-1)
