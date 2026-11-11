@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import axios from 'axios';
 
 let login = ref<string>("")
@@ -19,7 +19,25 @@ let regcommand = async () => {
     }
     console.log(response.data)
   } catch (error) {
-    console.error("fetch error", error);
+    console.error("register fetch error", error);
+  }
+}
+
+let logincommand = async () => {
+  try {
+
+    const response = await axios.post('http://localhost:3000/login', 
+      {
+        login: login.value,
+        password: password.value
+      }
+    );
+    if (!response) {
+      throw new Error('servar dead');
+    }
+    console.log(response.data)
+  } catch (error) {
+    console.error("login fetch error", error);
   }
 }
 </script>
@@ -33,7 +51,7 @@ let regcommand = async () => {
   <input placeholder="parol" type="password" v-model="password" />
   <br/>
   <button @click="regcommand"> create biba </button>
-  <button > auth </button>
+  <button @click="logincommand"> auth </button>
 
   <br/>
   <button @click="$router.push('/')"> homa </button>
